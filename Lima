@@ -1,0 +1,79 @@
+class lingkaran{
+    constructor(r){
+        this.jari = r
+    }
+
+    keliling = () => {
+        return 3.14 * 2 * this.jari
+    }
+
+    luas = () => {
+        return this.jari ** 2 * 3.14
+    }
+}
+
+class tabung extends lingkaran{
+    constructor(r, t){
+        super(r)
+        this.tinggi = t
+    }
+
+    volume = () => {
+        return this.tinggi * this.luas()
+    }
+    luasselimut = () =>{
+        return this.tinggi * this.keliling()
+    }
+    luaspermukaan = () =>{
+        return this.keliling() * (this.jari + this.tinggi)
+    }
+    
+}
+let a = new tabung(7.5, 50);
+console.log("TABUNG------------------------------------")
+console.log("Volume = " + a.volume());
+console.log("Luas Selimut = " + a.luasselimut());
+console.log("Luas Permukaan = " + a.luaspermukaan());
+
+class kerucut extends lingkaran{
+    constructor(r,t,s){
+        super(r)
+        this.tinggi = t
+        this.garispelukis = s
+    }
+
+    volume = () => {
+        return this.tinggi * this.luas() / 3
+    }
+
+    luasselimut = () =>{
+        return 3.14 * this.jari * this.garispelukis
+    }
+
+    luaspermukaan = () =>{
+        return this.luasselimut() + this.luas()
+    }
+}
+let b = new kerucut(10, 40, 41);
+console.log("TABUNG------------------------------------")
+console.log("Volume = " + b.volume());
+console.log("Luas Selimut = " + b.luasselimut());
+console.log("Luas Permukaan = " + b.luaspermukaan());
+
+class bola extends lingkaran{
+    constructor(r, t){
+        super(r)
+    }
+
+    volume = () => {
+        return 4/3 * 3.14 * this.jari ** 3
+    }
+    luaspermukaan = () =>{
+        return 4 * this.luas()
+    }
+    
+}
+let c = new bola(15);
+console.log("BOLA--------------------------------------")
+console.log("Volume = " + c.volume());
+console.log("Luas Permukaan = " + c.luaspermukaan());
