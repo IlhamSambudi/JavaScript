@@ -1,0 +1,22 @@
+const barang = [
+    { nama: 'Beras', harga: 10000, jumlah: 5 },
+    { nama: 'Gula', harga: 14000, jumlah: 5 },
+    { nama: 'Telur', harga: 20000, jumlah: 2 },
+    { nama: 'Minyak Goreng', harga: 9000, jumlah: 10 },
+]
+barang.map(
+    (bar, index) => {
+        console.log(bar.nama + " = " + bar.harga + " x " + bar.jumlah);
+    }
+)
+function count(hitung) {
+    if (hitung == null || hitung.length == 0) return 0
+
+    const harbar = hitung.reduce((total, hitung) => {
+        return total + hitung.harga * hitung.jumlah
+    }, 0)
+
+    return harbar
+}
+
+console.log("Total Harga = " + count(barang))
