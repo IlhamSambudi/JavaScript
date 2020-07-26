@@ -1,0 +1,23 @@
+function tanah(p,l){
+    let bayar = p * l * 1500000
+    return bayar 
+}
+
+function Pajak(p,l){
+    let luas = p * l * 1500000
+    let ppn = luas * (15/100)
+    return ppn
+}
+
+function count(p,l){
+    let luas = p * l * 1500000
+    let ppn = luas * (15/100)
+    return luas - ppn
+}
+
+console.log("Panjang                  = 20.5")
+console.log("Lebar                    = 30")
+console.log("Harga per m persegi      = 1500000")
+console.log("Harga Tanah              = " + tanah(20.5,30))
+console.log("Pajak                    = " + Pajak(20.5,30))
+console.log("Harga Yang Harus Dibayar = " + count(20.5,30))
